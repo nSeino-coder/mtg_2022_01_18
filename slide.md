@@ -9,6 +9,8 @@ paginate: true
 ～よりよいコーディングライフのために～
 <!--
 _class: lead
+_header: ""
+_footer: "2022.1.18.コーダー定例MTG by **n.seino**"
 -->
 
 ---
@@ -35,6 +37,9 @@ _class: lead
 > 参考： [スライド](http://takazudo.github.io/presentation-cssarchitecture/#/5)
 > 参考： [ウェブ制作者なら意識してほしいCSS設計の基礎知識](https://ics.media/entry/15166/)
 -->
+<!--
+header: "CSS設計について/1.CSS設計の必要性"
+-->
 
 ---
 ## ↓↓↓
@@ -53,6 +58,7 @@ _class: lead
 # :two: CSS設計について
 <!--
 _class: lead
+_header: ""
 -->
 
 ---
@@ -63,6 +69,9 @@ _class: lead
 ## なにをするの？
 - HTMLクラス名の規則を考える
 - CSSのコードの管理方法を考える
+<!--
+header: "CSS設計について/2.CSS設計について"
+-->
 
 ---
 ## よいCSSとは
@@ -159,6 +168,7 @@ _class: lead
 # :three: 設計手法の紹介（3選）
 <!--
 _class: lead
+_header: ""
 -->
 
 ---
@@ -171,6 +181,9 @@ _class: lead
   - [Object-Oriented CSS](http://oocss.org/)
 - SMACSS
   - [Scalable and Modular Architecture for CSS](http://smacss.com/ja)
+<!--
+header: "CSS設計について/3.設計手法の紹介（3選）"
+-->
 
 ---
 ## BEM（MindBEMding）とは
@@ -216,10 +229,14 @@ _class: lead
 # :four: まとめ
 <!--
 _class: lead
+_header: ""
 -->
 
 ---
 ## 書き比べてみた感想
+<!--
+header: "CSS設計について/4.まとめ"
+-->
 
 ---
 ## 設計はよいもの！
@@ -231,12 +248,16 @@ _class: lead
 # :five: おまけ
 <!--
 _class: lead
+_header: ""
 -->
 
 ---
 ## 参考文献
 - [CSS設計完全ガイド　～詳細解説＋実践的モジュール集](https://www.amazon.co.jp/dp/429711173X/ref=cm_sw_em_r_mt_dp_Z35SG2QWFQG0S0W1WRK2)
 ![bg fit right:38%](./img/2022-01-13-18-21-40.png)
+<!--
+header: "CSS設計について/5.おまけ"
+-->
 
 ---
 ## その他、参考にした記事のリンク集
@@ -261,4 +282,5 @@ VSCodeの拡張機能+Markdownで書きました！
 よいコーディングライフを！
 <!--
 _class: lead
+_header: ""
 -->
