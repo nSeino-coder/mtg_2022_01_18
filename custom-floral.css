@@ -2,6 +2,10 @@
 /* marp --theme-set custom-floral.css -- slide.md */
 @import 'gaia';
 
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&display=swap');
+* {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
 header {
   text-align: center;
 }
@@ -20,6 +24,10 @@ section.lead.top {
 section.lead.sub {
   background-image: url(img/slide_bg3.png);
 }
+section ul + h2,
+section ul + h3 {
+  margin-top: 80px;
+}
 section h3 {
   font-size: 1.2em;
 }
@@ -31,4 +39,14 @@ img[alt="book"]{
   float: left;
   width: 30%;
   margin-right: 60px;
+}
+blockquote {
+  background: #efefef;
+  padding: 20px 50px;
+  width: 90%;
+  font-size: 0.8em;
+}
+pre {
+  width: 90%;
+  margin-top: 5px;
 }

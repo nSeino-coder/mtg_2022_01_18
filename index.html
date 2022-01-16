@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="ja-JP"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS13aWR0aDo1cHh9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMCA2MGgtNWE1IDUgMCAwIDEtNS01VjIwYTUgNSAwIDAgMSA1LTVoNjBhNSA1IDAgMCAxIDUgNXY1TTMwIDg1aDYwIi8+PHJlY3QgeD0iMzAiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiLz48cmVjdCBjbGFzcz0iYSIgeD0iMzAiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHJ4PSI1Ii8+PHBhdGggY2xhc3M9ImEiIGQ9Ik00MCA1MGg0ME00MCA2MGgzMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{-webkit-animation-name:__bespoke_marp__!important;animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template-areas:"current next" "current note" "info    note";grid-template-columns:2fr 1fr;grid-template-rows:minmax(140px,1fr) 2fr 3em;height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;scrollbar-width:thin;scrollbar-color:hsla(0,0%,93.3%,.5) transparent;box-sizing:border-box;font-size:1.1em;height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93.3%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap");@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&display=swap');div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section h1{font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}
+/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section .hljs{display:block;overflow-x:auto;padding:.5em;background:#000;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-comment,div#p>svg>foreignObject>section .hljs-quote{color:#aeaeae;font-style:italic}div#p>svg>foreignObject>section .hljs-keyword,div#p>svg>foreignObject>section .hljs-selector-tag,div#p>svg>foreignObject>section .hljs-type{color:#e28964}div#p>svg>foreignObject>section .hljs-string{color:#65b042}div#p>svg>foreignObject>section .hljs-subst{color:#daefa3}div#p>svg>foreignObject>section .hljs-link,div#p>svg>foreignObject>section .hljs-regexp{color:#e9c062}div#p>svg>foreignObject>section .hljs-name,div#p>svg>foreignObject>section .hljs-section,div#p>svg>foreignObject>section .hljs-tag,div#p>svg>foreignObject>section .hljs-title{color:#89bdff}div#p>svg>foreignObject>section .hljs-class .hljs-title,div#p>svg>foreignObject>section .hljs-doctag{text-decoration:underline}div#p>svg>foreignObject>section .hljs-bullet,div#p>svg>foreignObject>section .hljs-number,div#p>svg>foreignObject>section .hljs-symbol{color:#3387cc}div#p>svg>foreignObject>section .hljs-params,div#p>svg>foreignObject>section .hljs-template-variable,div#p>svg>foreignObject>section .hljs-variable{color:#3e87e3}div#p>svg>foreignObject>section .hljs-attribute{color:#cda869}div#p>svg>foreignObject>section .hljs-meta{color:#8996a8}div#p>svg>foreignObject>section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#p>svg>foreignObject>section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#p>svg>foreignObject>section .hljs-selector-class{color:#9b703f}div#p>svg>foreignObject>section .hljs-selector-id{color:#8b98ab}div#p>svg>foreignObject>section .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section .hljs-strong{font-weight:700}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{max-height:580px}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin:.5em 0 0}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{font-weight:inherit}div#p>svg>foreignObject>section h1{font-size:1.8em}div#p>svg>foreignObject>section h2{font-size:1.5em}div#p>svg>foreignObject>section h3{font-size:1.3em}div#p>svg>foreignObject>section h4{font-size:1.1em}div#p>svg>foreignObject>section h5{font-size:1em}div#p>svg>foreignObject>section h6{font-size:.9em}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section p{margin:1em 0 0}div#p>svg>foreignObject>section ol>li,div#p>svg>foreignObject>section ul>li{margin:.3em 0 0}div#p>svg>foreignObject>section ol>li>p,div#p>svg>foreignObject>section ul>li>p{margin:.6em 0 0}div#p>svg>foreignObject>section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#p>svg>foreignObject>section pre{display:block;margin:1em 0 0;min-height:1em;overflow:visible}div#p>svg>foreignObject>section pre code{box-sizing:border-box;margin:0;min-width:100%;padding:.5em;font-size:.7em}div#p>svg>foreignObject>section pre code svg[data-marp-fitting=svg]{max-height:calc(580px - 1em)}div#p>svg>foreignObject>section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#p>svg>foreignObject>section blockquote:before{top:0;left:0}div#p>svg>foreignObject>section blockquote:after{right:0;bottom:0;transform:rotate(180deg)}div#p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#p>svg>foreignObject>section mark{background:transparent}div#p>svg>foreignObject>section table{border-spacing:0;border-collapse:collapse;margin:1em 0 0}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{padding:.2em .4em;border-width:1px;border-style:solid}div#p>svg>foreignObject>section:after,div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#p>svg>foreignObject>section:after{--marpit-root-font-size:66%}div#p>svg>foreignObject>section header{top:0}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{left:0;right:0}div#p>svg>foreignObject>section footer{bottom:0}div#p>svg>foreignObject>section{background-color:var(--color-background);background-image:linear-gradient(135deg,hsla(0,0%,53.3%,0),hsla(0,0%,53.3%,.02) 50%,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.05));color:var(--color-foreground);font-size:35px;font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;height:720px;line-height:1.35;letter-spacing:1.25px;padding:70px;width:1280px;word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,0.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1}div#p>svg>foreignObject>section{--marpit-root-font-size:35px}div#p>svg>foreignObject>section:after{right:0;bottom:0;font-size:80%}div#p>svg>foreignObject>section:after{--marpit-root-font-size:80%}div#p>svg>foreignObject>section a,div#p>svg>foreignObject>section mark{color:var(--color-highlight)}div#p>svg>foreignObject>section code{background:var(--color-dimmed);color:var(--color-background)}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{color:var(--color-highlight)}div#p>svg>foreignObject>section pre>code{background:var(--color-foreground)}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before,div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header,div#p>svg>foreignObject>section section:after{color:var(--color-dimmed)}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{border-color:var(--color-foreground)}div#p>svg>foreignObject>section table thead th{background:var(--color-foreground);color:var(--color-background)}div#p>svg>foreignObject>section table tbody>tr:nth-child(odd) td,div#p>svg>foreignObject>section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe,transparent)}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#p>svg>foreignObject>section.invert{--color-background:#455a64;--color-background-stripe:rgba(255,248,225,0.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa}div#p>svg>foreignObject>section.gaia{--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,0.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa}div#p>svg>foreignObject>section.lead{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center}div#p>svg>foreignObject>section.lead h1,div#p>svg>foreignObject>section.lead h2,div#p>svg>foreignObject>section.lead h3,div#p>svg>foreignObject>section.lead h4,div#p>svg>foreignObject>section.lead h5,div#p>svg>foreignObject>section.lead h6{text-align:center}div#p>svg>foreignObject>section.lead h1 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h2 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h3 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h4 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h5 svg[data-marp-fitting=svg],div#p>svg>foreignObject>section.lead h6 svg[data-marp-fitting=svg]{--preserve-aspect-ratio:xMidYMid meet}div#p>svg>foreignObject>section.lead p{text-align:center}div#p>svg>foreignObject>section.lead blockquote>h1,div#p>svg>foreignObject>section.lead blockquote>h2,div#p>svg>foreignObject>section.lead blockquote>h3,div#p>svg>foreignObject>section.lead blockquote>h4,div#p>svg>foreignObject>section.lead blockquote>h5,div#p>svg>foreignObject>section.lead blockquote>h6,div#p>svg>foreignObject>section.lead blockquote>p{text-align:left}div#p>svg>foreignObject>section.lead blockquote svg[data-marp-fitting=svg]:not([data-marp-fitting-math]){--preserve-aspect-ratio:xMinYMin meet}div#p>svg>foreignObject>section.lead ol>li>p,div#p>svg>foreignObject>section.lead ul>li>p{text-align:left}div#p>svg>foreignObject>section.lead table{margin-left:auto;margin-right:auto}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{position:static}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{position:relative}}div#p>svg>foreignObject>section [data-marp-fitting-svg-content]{display:table;white-space:nowrap}div#p>svg>foreignObject>section [data-marp-fitting-svg-content-wrap]{white-space:pre}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/* @theme custom-floral */
+/* marp --theme-set custom-floral.css -- slide.md */div#p>svg>foreignObject>section *{font-family:'Zen Kaku Gothic New',sans-serif}div#p>svg>foreignObject>section header{text-align:center}div#p>svg>foreignObject>section{background:url(img/slide_bg3.png) center no-repeat;background-size:cover;color:#2e2e2e}div#p>svg>foreignObject>section.lead{background-image:url(img/slide_bg2.png)}div#p>svg>foreignObject>section.lead.top{background-image:url(img/slide_bg1.png);color:#f6f6e9}div#p>svg>foreignObject>section.lead.sub{background-image:url(img/slide_bg3.png)}div#p>svg>foreignObject>section ul+h2,div#p>svg>foreignObject>section ul+h3{margin-top:80px}div#p>svg>foreignObject>section h3{font-size:1.2em}div#p>svg>foreignObject>section footer{text-align:center;color:#f6f6e9}div#p>svg>foreignObject>section img[alt=book]{float:left;width:30%;margin-right:60px}div#p>svg>foreignObject>section blockquote{background:#efefef;padding:20px 50px;width:90%;font-size:0.8em}div#p>svg>foreignObject>section pre{width:90%;margin-top:5px}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="lead top" data-footer="by **@nSeino-coder**" data-theme="custom-floral" class="lead top" style="--class:lead top;--footer:by **@nSeino-coder**;--theme:custom-floral;">
+<h1>CSS設計について</h1>
+<p>～よりよいコーディングライフのために～</p>
+<footer>by <strong>@nSeino-coder</strong></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="lead" data-theme="custom-floral" class="lead" style="--class:lead;--theme:custom-floral;">
+<h1><img class="emoji" draggable="false" alt="1️⃣" src="https://twemoji.maxcdn.com/2/svg/31-20e3.svg" data-marp-twemoji=""/> はじめに</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-header="CSS設計について/1.はじめに" data-theme="custom-floral" style="--header:CSS設計について/1.はじめに;--theme:custom-floral;">
+<header>CSS設計について/1.はじめに</header>
+<h2>今回話すこと</h2>
+<p><img class="emoji" draggable="false" alt="📖" src="https://twemoji.maxcdn.com/2/svg/1f4d6.svg" data-marp-twemoji=""/> <strong>CSS設計完全ガイド　～詳細解説＋実践的モジュール集</strong><br />
+の内容を、以下の要点にまとめてお伝えします。</p>
+<ul>
+<li>CSS設計がなぜ必要なのか</li>
+<li>CSS設計とはなんなのか</li>
+<li>有名な設計手法について</li>
+</ul>
+<p>また、書籍のコードサンプルを参考に、<br />
+設計手法ごとにHTML/CSSを書いてみたものを紹介します。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-header="CSS設計について/1.はじめに" data-theme="custom-floral" style="--header:CSS設計について/1.はじめに;--theme:custom-floral;">
+<header>CSS設計について/1.はじめに</header>
+<h2>書籍について<img class="emoji" draggable="false" alt="📖" src="https://twemoji.maxcdn.com/2/svg/1f4d6.svg" data-marp-twemoji=""/></h2>
+<h3>CSS設計完全ガイド　～詳細解説＋実践的モジュール集</h3>
+<p><img src="img/book.png" alt="book" /></p>
+<ul>
+<li>2020年2月27日紙版発売</li>
+<li><a href="https://gihyo.jp/book/2020/978-4-297-11173-1">書籍概要</a></li>
+<li><a href="https://css-architecture-perfect.guide/">コードサンプル</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-header="CSS設計について/1.はじめに" data-theme="custom-floral" style="--header:CSS設計について/1.はじめに;--theme:custom-floral;">
+<header>CSS設計について/1.はじめに</header>
+<h2>目次</h2>
+<ol>
+<li>はじめに　<strong>←ｲﾏｺｺ</strong></li>
+<li>CSS設計の必要性</li>
+<li>CSS設計について</li>
+<li>設計手法3選</li>
+<li>まとめ</li>
+<li>さいごに</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="lead" data-theme="custom-floral" class="lead" style="--class:lead;--theme:custom-floral;">
+<h1><img class="emoji" draggable="false" alt="2️⃣" src="https://twemoji.maxcdn.com/2/svg/32-20e3.svg" data-marp-twemoji=""/> CSS設計の必要性</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-header="CSS設計について/2.CSS設計の必要性" data-theme="custom-floral" style="--header:CSS設計について/2.CSS設計の必要性;--theme:custom-floral;">
+<header>CSS設計について/2.CSS設計の必要性</header>
+<h2>こんな経験ありませんか？</h2>
+<ul>
+<li>同じデザインなのにあっちもこっちも修正しないといけない</li>
+<li>CSSを修正したら意図していないパーツにも影響してしまった</li>
+<li>どこに適用されているのか分からない謎のスタイルがいる</li>
+<li>スタイルが上書きされすぎて<code>!important</code>せざるを得ない</li>
+<li>どんなクラス名をつけるべきか悩んでいたら夜が明けた</li>
+</ul>
+<p>などなど…</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-header="CSS設計について/2.CSS設計の必要性" data-theme="custom-floral" style="--header:CSS設計について/2.CSS設計の必要性;--theme:custom-floral;">
+<header>CSS設計について/2.CSS設計の必要性</header>
+<h2>なぜこんなことが起こるのか</h2>
+<ul>
+<li>
+<p>❝貧弱❞なCSSの問題</p>
+<ul>
+<li>ページ数が増えるほど「カオス」な状態になる</li>
+<li>すべてがグローバルスコープであるため、互いに干渉しやすい</li>
+</ul>
+</li>
+<li>
+<p>複雑化するWeb開発</p>
+<ul>
+<li>CMSなどで出力される変更不可能なHTML/CSS</li>
+<li>増加するページ数</li>
+<li>頻繁に変更される「状態」</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-header="CSS設計について/2.CSS設計の必要性" data-class="lead sub" data-theme="custom-floral" class="lead sub" style="--header:CSS設計について/2.CSS設計の必要性;--class:lead sub;--theme:custom-floral;">
+<header>CSS設計について/2.CSS設計の必要性</header>
+<h2>↓↓↓</h2>
+<h2>CSS設計で解決しよう！</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="lead" data-theme="custom-floral" class="lead" style="--class:lead;--theme:custom-floral;">
+<h1><img class="emoji" draggable="false" alt="3️⃣" src="https://twemoji.maxcdn.com/2/svg/33-20e3.svg" data-marp-twemoji=""/> CSS設計について</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-header="CSS設計について/2.CSS設計の必要性" data-theme="custom-floral" style="--header:CSS設計について/2.CSS設計の必要性;--theme:custom-floral;">
+<header>CSS設計について/2.CSS設計の必要性</header>
+<h2>個人でCSSを設計するのは難しい！</h2>
+<ul>
+<li>
+<p>規則をきちんと整理できていないと、<br />
+1人で開発するときですら記述がブレる</p>
+</li>
+<li>
+<p>ドキュメント化されていないと、<br />
+他者と作業するときに記述がブレる</p>
+</li>
+<li>
+<p>考えが甘すぎて、そもそも規則として機能していない</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-header="CSS設計について/2.CSS設計の必要性" data-theme="custom-floral" style="--header:CSS設計について/2.CSS設計の必要性;--theme:custom-floral;">
+<header>CSS設計について/2.CSS設計の必要性</header>
+<h2>先人たちのおかげで生まれた❝CSS設計❞</h2>
+<ul>
+<li>
+<p>2011年頃にNicolleSullivan氏が「<strong>OOCSS</strong>」を提唱し始めた<br />
+ことがきっかけ</p>
+</li>
+<li>
+<p>その後「<strong>BEM</strong>」や「<strong>SMACSS</strong>」などのCSS設計手法が<br />
+世界各国で開発され、広く使用された</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-header="CSS設計について/3.CSS設計について" data-theme="custom-floral" style="--header:CSS設計について/3.CSS設計について;--theme:custom-floral;">
+<header>CSS設計について/3.CSS設計について</header>
+<h2>どのCSS設計にも共通していること</h2>
+<ul>
+<li>
+<p><strong>抽象化すること</strong></p>
+<ul>
+<li>異なるスタイル間で共通するものは？</li>
+<li>共通する部分を切り出せないか？　などを考える</li>
+</ul>
+</li>
+<li>
+<p><strong>分けること</strong></p>
+<ul>
+<li>ファイルを分ける</li>
+<li>パーツの大きさで分ける</li>
+<li>役割に応じて名前を分ける</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-header="CSS設計について/3.CSS設計について" data-theme="custom-floral" style="--header:CSS設計について/3.CSS設計について;--theme:custom-floral;">
+<header>CSS設計について/3.CSS設計について</header>
+<h2>そもそも、よいCSSとは？</h2>
+<h3>よいCSS設計が目指す4つのゴール</h3>
+<p>GoogleのエンジニアPhilip Walton氏のブログ<br />
+「<a href="https://philipwalton.com/articles/css-architecture/">CSS Architecture</a>」で提唱されている考え方。</p>
+<ul>
+<li><strong>予測できる</strong></li>
+<li><strong>再利用できる</strong></li>
+<li><strong>拡張できる</strong></li>
+<li><strong>保守できる</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-header="CSS設計について/3.CSS設計について" data-theme="custom-floral" style="--header:CSS設計について/3.CSS設計について;--theme:custom-floral;">
+<header>CSS設計について/3.CSS設計について</header>
+<ul>
+<li>
+<p><strong>予測できる</strong><br />
+スタイリングが期待通りに動くか、<br />
+その影響範囲が予測できる状態。</p>
+</li>
+<li>
+<p><strong>再利用できる</strong><br />
+パーツを別の箇所で利用したとき、<br />
+コードを修正する手間がない状態。</p>
+</li>
+<li>
+<p><strong>拡張できる</strong><br />
+追加・更新・配置換えをしたとき、<br />
+既存のCSSをリファクタリングする必要がない状態。</p>
+</li>
+<li>
+<p><strong>保守できる</strong><br />
+CSSに携わる人が複数人であっても、問題なく管理できる状態。</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-header="CSS設計について/3.CSS設計について" data-class="lead sub" data-theme="custom-floral" class="lead sub" style="--header:CSS設計について/3.CSS設計について;--class:lead sub;--theme:custom-floral;">
+<header>CSS設計について/3.CSS設計について</header>
+<h2>↓↓↓</h2>
+<h2>どうやって実現させればいいの？？</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-header="CSS設計について/3.CSS設計について" data-theme="custom-floral" style="--header:CSS設計について/3.CSS設計について;--theme:custom-floral;">
+<header>CSS設計について/3.CSS設計について</header>
+<h2>CSS設計に共通する8つのポイント</h2>
+<ol>
+<li>特性に応じてCSSを分類する</li>
+<li>コンテンツとスタイリングが疎結合である</li>
+<li>影響範囲がみだりに広すぎない</li>
+<li>特定のコンテキストにみだりに依存していない</li>
+<li>詳細度がみだりに高くない</li>
+<li>クラス名から影響範囲が想像できる</li>
+<li>クラス名から見た目・機能・役割が想像できる</li>
+<li>拡張しやすい</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="lead" data-theme="custom-floral" class="lead" style="--class:lead;--theme:custom-floral;">
+<h1><img class="emoji" draggable="false" alt="4️⃣" src="https://twemoji.maxcdn.com/2/svg/34-20e3.svg" data-marp-twemoji=""/> 設計手法の紹介（3選）</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h2>有名な3つの設計手法</h2>
+<ul>
+<li>
+<p>OOCSS</p>
+<ul>
+<li><a href="http://oocss.org/">http://oocss.org/</a></li>
+</ul>
+</li>
+<li>
+<p>SMACSS</p>
+<ul>
+<li><a href="http://smacss.com/ja">http://smacss.com/ja</a></li>
+</ul>
+</li>
+<li>
+<p>BEM</p>
+<ul>
+<li><a href="https://en.bem.info/">https://en.bem.info/</a></li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h2>OOCSS（Object-Oriented CSS）</h2>
+<ul>
+<li>
+<p><strong>提唱された発想</strong></p>
+<ul>
+<li>レゴのように組み合わせ自由なモジュールの集まりを作ろう</li>
+<li>そのモジュールの組み合わせでページを作成しよう</li>
+<li>新規ページを作るときも、基本的に追加のCSSは必要ない</li>
+</ul>
+</li>
+<li>
+<p><strong>原則</strong></p>
+<ul>
+<li>ストラクチャーとスキンの分離</li>
+<li>コンテナとコンテンツの分離</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h3>ストラクチャー（構造）とスキン（見た目）の分離</h3>
+<ul>
+<li>ストラクチャー： <code>width</code>/<code>height</code>/<code>padding</code>/<code>margin</code> など</li>
+<li>スキン： <code>color</code>/<code>font</code>/<code>background</code>/<code>box-shadow</code> など</li>
+</ul>
+<h3>コンテナとコンテンツの分離</h3>
+<ul>
+<li>コンテナ： ヘッダー・セクションなど（エリア）</li>
+<li>コンテンツ： カードやボタンモジュールなど</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h2>SMACSS（Scalable and Modular Architecture for CSS）</h2>
+<ul>
+<li>CSSを5つのカテゴリに分類して管理
+<ul>
+<li>Base … 要素そのもののデフォルトスタイル</li>
+<li>Layout … ページをエリアごとに分割</li>
+<li>Module … 再利用可能なパーツ</li>
+<li>State … レイアウトやモジュールの特定の状態を示す</li>
+<li>Theme … サイトのルック＆フィールを定義</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h2>BEM</h2>
+<ul>
+<li>
+<p><strong>Block</strong> … 論理的かつ機能的に独立したモジュール<br />
+※レイアウトに関するスタイリング<br />
+（position/float/marginなど）をしてはいけない。</p>
+</li>
+<li>
+<p><strong>Element</strong> … Blockの子要素<br />
+※Blockの外では独立して使用できない</p>
+</li>
+<li>
+<p><strong>Modifier</strong> … BlockやElementの装飾や動作のパターン</p>
+</li>
+<li>
+<p>詳細度を均一に保つため、要素・IDセレクタは推奨されない</p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h2>他にも…</h2>
+<ul>
+<li>PRECSS</li>
+<li>MCSS</li>
+<li>FLOCSS 　など</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-header="CSS設計について/4.設計手法の紹介（3選）" data-theme="custom-floral" style="--header:CSS設計について/4.設計手法の紹介（3選）;--theme:custom-floral;">
+<header>CSS設計について/4.設計手法の紹介（3選）</header>
+<h2>各設計手法で書いてみた</h2>
+<ul>
+<li>
+<p>OOCSS<br />
+<a href="http://sample.com/OOCSS/">http://sample.com/OOCSS/</a></p>
+</li>
+<li>
+<p>SMACSS<br />
+<a href="http://sample.com/SMACSS/">http://sample.com/SMACSS/</a></p>
+</li>
+<li>
+<p>BEM<br />
+<a href="http://sample.com/BEM/">http://sample.com/BEM/</a></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="lead" data-theme="custom-floral" class="lead" style="--class:lead;--theme:custom-floral;">
+<h1><img class="emoji" draggable="false" alt="5️⃣" src="https://twemoji.maxcdn.com/2/svg/35-20e3.svg" data-marp-twemoji=""/> まとめ</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-header="CSS設計について/5.まとめ" data-theme="custom-floral" style="--header:CSS設計について/5.まとめ;--theme:custom-floral;">
+<header>CSS設計について/5.まとめ</header>
+<h2>書き比べてみた感想</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-header="CSS設計について/5.まとめ" data-theme="custom-floral" style="--header:CSS設計について/5.まとめ;--theme:custom-floral;">
+<header>CSS設計について/5.まとめ</header>
+<h2>設計はよいもの！</h2>
+<ul>
+<li>設計手法を理解して利用することで、結果的に作業の効率化につながる！</li>
+<li>UIの部品化などのコンポーネント思考は、CSS以外でも有用な考え方</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="lead" data-theme="custom-floral" class="lead" style="--class:lead;--theme:custom-floral;">
+<h1><img class="emoji" draggable="false" alt="6️⃣" src="https://twemoji.maxcdn.com/2/svg/36-20e3.svg" data-marp-twemoji=""/> おまけ</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-header="CSS設計について/6.おまけ" data-theme="custom-floral" style="--header:CSS設計について/6.おまけ;--theme:custom-floral;">
+<header>CSS設計について/6.おまけ</header>
+<h2>今回のスライドについて</h2>
+<p>VSCodeの拡張機能<a href="https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode">Marp for VS Code</a>を使って、<br />
+Markdownで書きました！<br />
+マウス操作なしでサクサク便利<img class="emoji" draggable="false" alt="😄" src="https://twemoji.maxcdn.com/2/svg/1f604.svg" data-marp-twemoji=""/><img class="emoji" draggable="false" alt="🙏" src="https://twemoji.maxcdn.com/2/svg/1f64f.svg" data-marp-twemoji=""/><img class="emoji" draggable="false" alt="✨" src="https://twemoji.maxcdn.com/2/svg/2728.svg" data-marp-twemoji=""/></p>
+<ul>
+<li>参考記事
+<ul>
+<li><a href="https://qiita.com/tomo_makes/items/aafae4021986553ae1d8">【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る</a></li>
+<li><a href="https://techblog.istyle.co.jp/archives/6356">【Marp】スライドをさっと作成して、CSSで自由にスタイルをあてたい</a></li>
+</ul>
+</li>
+<li>お借りした背景素材：<a href="https://www.slidescarnival.com/ceres-free-presentation-template/1766">Floral Drawings Slides</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="lead top" data-theme="custom-floral" class="lead top" style="--class:lead top;--theme:custom-floral;">
+<h1>ご清聴ありがとうございました<img class="emoji" draggable="false" alt="🙇" src="https://twemoji.maxcdn.com/2/svg/1f647.svg" data-marp-twemoji=""/></h1>
+<p>よいコーディングライフを！</p>
+</section>
+<script>!function(){"use strict";const t="marpitSVGPolyfill:setZoomFactor,",e=Symbol();let r,o;function n(n){const i="object"==typeof n&&n.target||document,a="object"==typeof n?n.zoom:n;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),window.addEventListener("message",(({data:e,origin:r})=>{if(r===window.origin)try{if(e&&"string"==typeof e&&e.startsWith(t)){const[,t]=e.split(","),r=Number.parseFloat(t);Number.isNaN(r)||(o=r)}}catch(t){console.error(t)}})));let l=!1;Array.from(i.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,n,i,s;t.style.transform||(t.style.transform="translateZ(0)");const c=a||o||t.currentScale||1;r!==c&&(r=c,l=c);const d=t.getBoundingClientRect(),{length:u}=t.children;for(let r=0;r<u;r+=1){const o=t.children[r],a=o.getScreenCTM();if(a){const t=null!==(n=null===(e=o.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==n?n:0,r=null!==(s=null===(i=o.y)||void 0===i?void 0:i.baseVal.value)&&void 0!==s?s:0,l=o.firstElementChild,{style:u}=l;u.transformOrigin||(u.transformOrigin=`${-t}px ${-r}px`),u.transform=`scale(${c}) matrix(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e-d.left}, ${a.f-d.top}) translateZ(0.0001px)`}}})),!1!==l&&Array.from(i.querySelectorAll("iframe"),(({contentWindow:e})=>{null==e||e.postMessage(`${t}${l}`,"null"===window.origin?"*":window.origin)}))}r=1,o=void 0;const i=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function a({once:t=!1,target:e=document}={}){const r="Apple Computer, Inc."===navigator.vendor?[n]:[];let o=!t;const a=()=>{for(const t of r)t({target:e});!function(t=document){Array.from(t.querySelectorAll('svg[data-marp-fitting="svg"]'),(t=>{var e;const r=t.firstChild,o=r.firstChild,{scrollWidth:n,scrollHeight:a}=o;let l,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(l=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(s=e)}const c=Math.max(n,s),d=Math.max(a,1),u=`0 0 ${c} ${d}`;i(r,"width",`${c}`),i(r,"height",`${d}`),i(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),i(t,"viewBox",u)&&t.classList.toggle("__reflow__")}))}(e),o&&window.requestAnimationFrame(a)};return a(),()=>{o=!1}}const l=Symbol(),s=document.currentScript;((t=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(t[l])return t[l];const e=a({target:t}),r=()=>{e(),delete t[l]};Object.defineProperty(t,l,{configurable:!0,value:r})})(s?s.getRootNode():document)}();
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="7" tabindex="0"><p>//speaker note
+本書では以下が挙げられています。
+
+カオス：複雑、無秩序すぎて目も当てられない状態のこと。
+なんの規則もなしに複数ページを書くとなると、CSSを編集したり追加してどこに影響するのか、見つけるのが難しくなる。
+制作時はなんとかなっても、Webサイトには運用があります。カオスになったCSSを、数ヶ月後の自分、もしくは他の人が読み解いて、想定外の影響がないよう運用するのはとても骨が折れる作業です。</p></div><div class="bespoke-marp-note" data-index="11" tabindex="0"><p>//speaker note
+ニコール・サリヴァン氏</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>//speaker note
+なんの指標もなしに工夫するのは大変！
+上記の4つのゴールを実現するために本書では8つのルールがあげられています。</p></div><div class="bespoke-marp-note" data-index="16" tabindex="0"><p>//speaker note
+設計手法の紹介とともに、どのルールに該当するのかが提示されていてわかりやすいです。</p></div><div class="bespoke-marp-note" data-index="18" tabindex="0"><p>//speaker note
+紹介する設計手法と、その公式ドキュメント一覧。</p></div><div class="bespoke-marp-note" data-index="19" tabindex="0"><p>//speaker note
+日本語訳：オブジェクト指向CSS
+解説はかなり簡素で、明確に規則と呼べるものも多くない。
+他の設計手法も、基本的にOOCSSを参考にしつつ改良が加えられたもの。CSS設計の基礎中の基礎であると本書では言っている。</p></div><div class="bespoke-marp-note" data-index="20" tabindex="0"><p>//speaker note
+モジュールをなるべく特定のエリアに依存させない！</p></div><div class="bespoke-marp-note" data-index="21" tabindex="0"><p>//speaker note
+日本語訳：拡張可能かつモジュール的なCSS設計。
+OOCSSがほぼモジュールのみにしか言及していないのに対し、SMACSSはベースやレイアウトの扱い方にまで言及している。</p></div><div class="bespoke-marp-note" data-index="22" tabindex="0"><p>//speaker note
+OOCSSのようにモジュールをベースにした方法論であるものの、他の設計手法に比べて厳格・強力。
+Blockは特定のコンテキストに依存していない、どこでも使い回せるパーツ。基本的に、レイアウトに関するスタイリング（position/float/marginなど）をしてはいけない。</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@1.0.1/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),i=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},a=function(e,t){return(t=t||{}).index=i.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){i[e]&&(n&&l("deactivate",a(n,t)),n=i[e],l("activate",a(n,t)))},d=function(e,t){var r=i.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return i.indexOf(n);l("slide",a(i[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:i,destroy:function(e){l("destroy",a(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach((e=>e.classList.add("bespoke-marp-slide"))),e.on("activate",(t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach((e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")})),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))}))}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],i=(r,i)=>{t=r,n=i,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=i;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===i?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")}))})),e.fragmentIndex=i;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:i};e.fire("fragment",s)};e.on("next",(({fragment:s=!0})=>{if(s){if(r(1))return i(t,n+1),!1;const s=t+1;e.fragments[s]&&i(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return i(t,r-1),!1;const s=e.fragments[t+1];s&&i(t+1,s.length-1)}})),e.on("prev",(({fragment:s=!0})=>{if(r(-1)&&s)return i(t,n-1),!1;const a=t-1;e.fragments[a]&&i(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const i=e.fragments[t];if(i){const{length:e}=i;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}i(t,r)})),i(0,0)}var r,i=(function(e){!function(){var t="undefined"!=typeof window&&void 0!==window.document?window.document:{},n=e.exports,r=function(){for(var e,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,i=n.length,s={};r<i;r++)if((e=n[r])&&e[1]in t){for(r=0;r<e.length;r++)s[n[0][r]]=e[r];return s}return!1}(),i={change:r.fullscreenchange,error:r.fullscreenerror},s={request:function(e,n){return new Promise(function(i,s){var a=function(){this.off("change",a),i()}.bind(this);this.on("change",a);var o=(e=e||t.documentElement)[r.requestFullscreen](n);o instanceof Promise&&o.then(a).catch(s)}.bind(this))},exit:function(){return new Promise(function(e,n){if(this.isFullscreen){var i=function(){this.off("change",i),e()}.bind(this);this.on("change",i);var s=t[r.exitFullscreen]();s instanceof Promise&&s.then(i).catch(n)}else e()}.bind(this))},toggle:function(e,t){return this.isFullscreen?this.exit():this.request(e,t)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,n){var r=i[e];r&&t.addEventListener(r,n,!1)},off:function(e,n){var r=i[e];r&&t.removeEventListener(r,n,!1)},raw:r};r?(Object.defineProperties(s,{isFullscreen:{get:function(){return Boolean(t[r.fullscreenElement])}},element:{enumerable:!0,get:function(){return t[r.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(t[r.fullscreenEnabled])}}}),n?e.exports=s:window.screenfull=s):n?e.exports={isEnabled:!1}:window.screenfull={isEnabled:!1}}()}(r={exports:{}},r.exports),r.exports);function s(e){e.fullscreen=()=>{i.isEnabled&&i.toggle(document.body)},document.addEventListener("keydown",(t=>{70!==t.which&&122!==t.which||t.altKey||t.ctrlKey||t.metaKey||!i.isEnabled||(e.fullscreen(),t.preventDefault())}))}function a(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout((()=>{t.parent.classList.add("bespoke-marp-inactive"),t.fire("marp-inactive")}),e),t.parent.classList.contains("bespoke-marp-inactive")&&(t.parent.classList.remove("bespoke-marp-inactive"),t.fire("marp-active"))}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}const o=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"];function l(e){e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(o.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))}function c(e){window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("[data-marp-fitting]")?"":"hideable";t.setAttribute("data-bespoke-marp-load",e)}}))}var d;function u({interval:e=200}={}){return t=>{document.addEventListener("keydown",(e=>{if(32===e.which&&e.shiftKey)t.prev();else if(33===e.which||37===e.which||38===e.which)t.prev({fragment:!e.shiftKey});else if(32!==e.which||e.shiftKey)if(34===e.which||39===e.which||40===e.which)t.next({fragment:!e.shiftKey});else if(35===e.which)t.slide(t.slides.length-1,{fragment:-1});else{if(36!==e.which)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,i=0;t.parent.addEventListener("wheel",(s=>{let a=!1;const o=(e,t)=>{e&&(a=a||function(e,t){return function(e,t){const n=t===d.X?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]}(e,t)&&function(e,t){const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),(null==e?void 0:e.parentElement)&&o(e.parentElement,t)};if(0!==s.deltaX&&o(s.target,d.X),0!==s.deltaY&&o(s.target,d.Y),a)return;s.preventDefault(),r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const l=Date.now()-i<e,c=Math.sqrt(Math.pow(s.deltaX,2)+Math.pow(s.deltaY,2)),u=c<=n;if(n=c,l||u)return;let f;(s.deltaX>0||s.deltaY>0)&&(f="next"),(s.deltaX<0||s.deltaY<0)&&(f="prev"),f&&(t[f](),i=Date.now())}))}}!function(e){e.X="X",e.Y="Y"}(d||(d={}));const f=(...e)=>history.replaceState(...e),p="data-bespoke-view",m="presenter",h="next",g=["",m,h],v=(e,{protocol:t,host:n,pathname:r,hash:i}=location)=>{const s=e.toString();return`${t}//${n}${r}${s?"?":""}${s}${i}`},b=()=>{const e=document.body.getAttribute(p);if(g.includes(e))return e;throw new Error("View mode is not assigned.")},w=e=>new URLSearchParams(location.search).get(e),y=(e,t={})=>{var n;const r=Object.assign({location:location,setter:f},t),i=new URLSearchParams(r.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{r.setter(Object.assign({},null!==(n=window.history.state)&&void 0!==n?n:{}),"",v(i,r.location))}catch(e){console.error(e)}},x={available:(()=>{try{return localStorage.setItem("bespoke-marp","bespoke-marp"),localStorage.removeItem("bespoke-marp"),!0}catch(e){return console.warn("Warning: Using localStorage is restricted in the current host so some features may not work."),!1}})(),get:e=>{try{return localStorage.getItem(e)}catch(e){return null}},set:(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},remove:e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}}};function E(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return i.isEnabled||n("fullscreen",(e=>e.style.display="none")),x.available||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;switch(n&&t.target.blur(),n){case"next":e.next({fragment:!t.shiftKey});break;case"prev":e.prev({fragment:!t.shiftKey});break;case"fullscreen":"function"==typeof e.fullscreen&&i.isEnabled&&e.fullscreen();break;case"presenter":e.openPresenterView()}}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:i})=>{n("prev",(e=>e.disabled=0===t&&0===i)),n("next",(n=>n.disabled=t===e.slides.length-1&&i===r.length-1))})),e.on("marp-active",(()=>t.removeAttribute("aria-hidden"))),e.on("marp-inactive",(()=>t.setAttribute("aria-hidden","true"))),i.isEnabled&&i.onchange((()=>n("fullscreen",(e=>e.classList.toggle("exit",i.isEnabled&&i.isFullscreen)))))}}function k(e){window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let i=Number.parseInt(t,10),s=Number.parseInt(n,10)+1;s>=e.fragments[i].length&&(i+=1,s=0),e.slide(i,{fragment:s})}}))}function L(e){if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:S},presenterUrl:{enumerable:!0,get:I}}),x.available&&document.addEventListener("keydown",(t=>{80!==t.which||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))}function S(){const e=Math.max(Math.floor(.85*window.innerWidth),640),t=Math.max(Math.floor(.85*window.innerHeight),360);return window.open(this.presenterUrl,`bespoke-marp-presenter-${this.syncKey}`,`width=${e},height=${t},menubar=no,toolbar=no`)}function I(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),v(e)}var M=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let P=e=>String(e).replace(/[&<>"']/g,(e=>`&${O[e]};`)),O={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},F="dangerouslySetInnerHTML",$={className:"class",htmlFor:"for"},q={};function K(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==F&&(r+=` ${$[e]?$[e]:P(e)}="${P(t[e])}"`);r+=">"}if(-1===M.indexOf(e)){if(t[F])r+=t[F].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===q[e]?e:P(e)}r+=e?`</${e}>`:""}return q[r]=!0,r}const T=({children:e})=>K(null,null,...e),A="bespoke-marp-presenter-container",N="bespoke-marp-presenter-next",C="bespoke-marp-presenter-next-container",j="bespoke-marp-presenter-note-container",D="bespoke-marp-presenter-info-container",R="bespoke-marp-presenter-info-page",X="bespoke-marp-presenter-info-page-text",B="bespoke-marp-presenter-info-page-prev",U="bespoke-marp-presenter-info-page-next",V="bespoke-marp-presenter-info-time",Y="bespoke-marp-presenter-info-timer";function z(e){const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=A,t.appendChild(e),t.insertAdjacentHTML("beforeend",K(T,null,K("div",{class:C},K("iframe",{class:N,src:"?view=next"})),K("div",{class:j}),K("div",{class:D},K("div",{class:R},K("button",{class:B,tabindex:"-1",title:"Previous"},"Previous"),K("span",{class:X}),K("button",{class:U,tabindex:"-1",title:"Next"},"Next")),K("time",{class:V,title:"Current time"}),K("div",{class:Y})))),t})(e.parent)),(e=>{r(C).addEventListener("click",(()=>e.next()));const t=r(N),n=(i=t,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;t.addEventListener("load",(()=>{r(C).classList.add("active"),n(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>n(e,t)))}));const s=document.querySelectorAll(".bespoke-marp-note");s.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(j).appendChild(e)})),e.on("activate",(()=>s.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide()))))),e.on("activate",(({index:t})=>{r(X).textContent=`${t+1} / ${e.slides.length}`}));const a=r(B),o=r(U);a.addEventListener("click",(t=>{a.blur(),e.prev({fragment:!t.shiftKey})})),o.addEventListener("click",(t=>{o.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{a.disabled=0===t&&0===r,o.disabled=t===e.slides.length-1&&r===n.length-1}));const l=()=>r(V).textContent=(new Date).toLocaleTimeString();l(),setInterval(l,250)})(e)}function H(e){const t=b();return t===h&&e.appendChild(document.createElement("span")),{"":L,[m]:z,[h]:k}[t]}function J(e){e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))}const W=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t};function _(e={}){const t=Object.assign({history:!0},e);return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},i=(t={fragment:!0})=>{((t,n)=>{const{fragments:r,slides:i}=e,s=Math.max(0,Math.min(t,i.length-1)),a=Math.max(0,Math.min(n||0,r[s].length-1));s===e.slide()&&a===e.fragmentIndex||e.slide(s,{fragment:a})})((W(location.hash.slice(1))||1)-1,t.fragment?W(w("f")||""):null)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||y({f:0===r||r.toString()},{location:Object.assign(Object.assign({},location),{hash:`#${e+1}`}),setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{i(),window.addEventListener("hashchange",(()=>r((()=>{i({fragment:!1}),y({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>i()))})),n=!1}),0)}}function G(e={}){var t;const n=e.key||(null===(t=window.history.state)||void 0===t?void 0:t.marpBespokeSyncKey)||Math.random().toString(36).slice(2),r=`bespoke-marp-sync-${n}`;var i;i={marpBespokeSyncKey:n},y({},{setter:(e,...t)=>f(Object.assign(Object.assign({},e),i),...t)});const s=()=>{const e=x.get(r);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=s(),n=Object.assign(Object.assign({},t),e(t));return x.set(r,JSON.stringify(n)),n},o=()=>{window.removeEventListener("pageshow",o),a((e=>({reference:(e.reference||0)+1})))};return e=>{o(),Object.defineProperty(e,"syncKey",{value:n,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&a((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===r&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),i=JSON.parse(n.newValue);if(r.index!==i.index||r.fragmentIndex!==i.fragmentIndex)try{t=!1,e.slide(i.index,{fragment:i.fragmentIndex})}finally{t=!0}}}));const i=()=>{const{reference:e}=s();void 0===e||e<=1?x.remove(r):a((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",o),i()})),e.on("destroy",i)}}function Q({slope:e=Math.tan(-35*Math.PI/180),swipeThreshold:t=30}={}){return n=>{let r;const i=n.parent,s=e=>{const t=i.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};i.addEventListener("touchstart",(e=>{r=1===e.touches.length?s(e.touches[0]):void 0}),{passive:!0}),i.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=s(e.touches[0]),n=t.x-r.x,i=t.y-r.y;r.delta=Math.sqrt(Math.pow(Math.abs(n),2)+Math.pow(Math.abs(i),2)),r.radian=Math.atan2(n,i)}else r=void 0})),i.addEventListener("touchend",(i=>{if(r){if(r.delta&&r.delta>=t&&r.radian){let t=r.radian-e;t=(t+Math.PI)%(2*Math.PI)-Math.PI,n[t<0?"next":"prev"](),i.stopPropagation()}r=void 0}}),{passive:!0})}}function Z(e,t,n,r){return new(n||(n=Promise))((function(i,s){function a(e){try{l(r.next(e))}catch(e){s(e)}}function o(e){try{l(r.throw(e))}catch(e){s(e)}}function l(e){var t;e.done?i(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(a,o)}l((r=r.apply(e,t||[])).next())}))}let ee;const te=()=>(void 0===ee&&(ee="wakeLock"in navigator&&navigator.wakeLock),ee),ne=()=>Z(void 0,void 0,void 0,(function*(){const e=te();if(e)try{return yield e.request("screen")}catch(e){console.warn(e)}return null}));function re(){return Z(this,void 0,void 0,(function*(){if(!te())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&ne()};return document.addEventListener("visibilitychange",t),document.addEventListener("fullscreenchange",t),e=yield ne(),e}))}!function(r=document.getElementById("p")){document.body.setAttribute(p,(()=>{const e=w("view");return e===h||e===m?e:""})());const i=(e=>{const t=w(e);return y({[e]:void 0}),t})("sync")||void 0,o=!1,d=!0;e(r,((...e)=>{const t=g.findIndex((e=>b()===e));if(t<0)throw new Error("Invalid view");return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[d,d,o],G({key:i})],[[d,d,d],H(r)],[[d,d,o],l],[[d,d,d],t],[[d,o,o],a()],[[d,d,d],c],[[d,d,d],_({history:!1})],[[d,d,o],u()],[[d,d,o],s],[[d,o,o],J],[[d,d,o],Q()],[[d,o,o],E()],[[d,d,d],n],[[d,d,o],re]))}()}();</script></body></html>

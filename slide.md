@@ -2,28 +2,60 @@
 marp: true
 theme: custom-floral
 size: 16:9
-paginate: true
 ---
 # CSS設計について
 
 ～よりよいコーディングライフのために～
 <!--
+_class: lead top
+_header: ""
+_footer: "by **@nSeino-coder**"
+-->
+
+---
+# :one: はじめに
+<!--
 _class: lead
 _header: ""
-_footer: "2022.1.18.コーダー定例MTG by **n.seino**"
 -->
 
 ---
 ## 今回話すこと
-1. CSS設計の必要性
-2. CSS設計について
-3. 設計手法の紹介（3選）
-4. まとめ
+:book: **CSS設計完全ガイド　～詳細解説＋実践的モジュール集**
+の内容を、以下の要点にまとめてお伝えします。
+- CSS設計がなぜ必要なのか
+- CSS設計とはなんなのか
+- 有名な設計手法について
+
+また、書籍のコードサンプルを参考に、
+設計手法ごとにHTML/CSSを書いてみたものを紹介します。
+<!--
+header: "CSS設計について/1.はじめに"
+-->
 
 ---
-# :one: CSS設計の必要性
+## 書籍について:book:
+
+### CSS設計完全ガイド　～詳細解説＋実践的モジュール集
+![book](img/book.png)
+- 2020年2月27日紙版発売
+- [書籍概要](https://gihyo.jp/book/2020/978-4-297-11173-1)
+- [コードサンプル](https://css-architecture-perfect.guide/)
+
+---
+## 目次
+1. はじめに　**←ｲﾏｺｺ**
+2. CSS設計の必要性
+3. CSS設計について
+4. 設計手法3選
+5. まとめ
+6. さいごに
+
+---
+# :two: CSS設計の必要性
 <!--
 _class: lead
+_header: ""
 -->
 
 ---
@@ -33,139 +65,134 @@ _class: lead
 - どこに適用されているのか分からない謎のスタイルがいる
 - スタイルが上書きされすぎて`!important`せざるを得ない
 - どんなクラス名をつけるべきか悩んでいたら夜が明けた
+
+などなど…
 <!--
-> 参考： [スライド](http://takazudo.github.io/presentation-cssarchitecture/#/5)
-> 参考： [ウェブ制作者なら意識してほしいCSS設計の基礎知識](https://ics.media/entry/15166/)
+header: "CSS設計について/2.CSS設計の必要性"
 -->
-<!--
-header: "CSS設計について/1.CSS設計の必要性"
+
+---
+## なぜこんなことが起こるのか
+- ❝貧弱❞なCSSの問題
+  - ページ数が増えるほど「カオス」な状態になる
+  - すべてがグローバルスコープであるため、互いに干渉しやすい
+
+- 複雑化するWeb開発
+  - CMSなどで出力される変更不可能なHTML/CSS
+  - 増加するページ数
+  - 頻繁に変更される「状態」
+<!-- //speaker note
+本書では以下が挙げられています。
+
+カオス：複雑、無秩序すぎて目も当てられない状態のこと。
+なんの規則もなしに複数ページを書くとなると、CSSを編集したり追加してどこに影響するのか、見つけるのが難しくなる。
+制作時はなんとかなっても、Webサイトには運用があります。カオスになったCSSを、数ヶ月後の自分、もしくは他の人が読み解いて、想定外の影響がないよう運用するのはとても骨が折れる作業です。
 -->
 
 ---
 ## ↓↓↓
-## CSS設計ですべて解決できます！！
+## CSS設計で解決しよう！
 <!--
-_class: lead
+_class: lead sub
 -->
 
 ---
-## たとえば、こんな場面
-- ある程度のページ数があるWebサイトのHTML/CSSを書くとき
-- 複数人で作業するとき
-- 長期的にサイトの管理をするとき
-
----
-# :two: CSS設計について
+# :three: CSS設計について
 <!--
 _class: lead
 _header: ""
 -->
 
 ---
-## なんのために？
-- メンテナンス性の向上
-- 作業の効率化
+## 個人でCSSを設計するのは難しい！
+- 規則をきちんと整理できていないと、
+  1人で開発するときですら記述がブレる
 
-## なにをするの？
-- HTMLクラス名の規則を考える
-- CSSのコードの管理方法を考える
-<!--
-header: "CSS設計について/2.CSS設計について"
+- ドキュメント化されていないと、
+  他者と作業するときに記述がブレる
+
+- 考えが甘すぎて、そもそも規則として機能していない
+
+---
+## 先人たちのおかげで生まれた❝CSS設計❞
+- 2011年頃にNicolleSullivan氏が「**OOCSS**」を提唱し始めた
+  ことがきっかけ
+
+- その後「**BEM**」や「**SMACSS**」などのCSS設計手法が
+  世界各国で開発され、広く使用された
+<!-- //speaker note
+ニコール・サリヴァン氏
 -->
 
 ---
-## よいCSSとは
+## どのCSS設計にも共通していること
+- **抽象化すること**
+  - 異なるスタイル間で共通するものは？
+  - 共通する部分を切り出せないか？　などを考える
 
-1. 予測できる
-2. 再利用できる
-3. 保守できる
-4. 拡張できる
-
-> 参考：[GoogleのエンジニアPhilipWalton氏のブログ](https://philipwalton.com/articles/css-architecture/)
-
----
-## 1.予測できる
-
-- クラス名を見れば何に使われているかすぐにわかる
-- クラス名がユニークになることにより、想定外の不具合が起きない
-- 特定の要素を探す時に役立つ
-
----
-:x: NG例：どこで使ってるスタイル？？
-```css
-.bt { ... }
-.red { ... }
-.box04 .top { ... }
-```
-
-:o: OK例：あれのスタイルかな？
-```css
-.button { ... }
-.is-error { ... }
-.index-greeting .title { ... }
-```
-
----
-## 2.再利用できる
-
-- コードを書き直したり上書きする手間がない状態
-- スタイリングが抽象化されている
-- スタイリングが適切に分離されている
-
----
-:x: NG例：同じスタイルがたくさん…
-```css
-.news .link { ... }
-.gallery .link { ... }
-.box01 .button { ... }
-```
-
-:o: OK例：共通のボタンとして使いまわせる
-```css
-.common-button { ... }
-```
-
----
-## 3.保守できる
-
-- こんなときに既存のCSSをリファクタリングする必要がない
-  - 新しいコンテンツや機能を追加した
-  - コンテンツの位置を変更した　など
-
----
-:x: NG例：既存のスタイルがジャマだな…
-```css
-.contents ul { ... }
-.contents .index-add ul { ... }
-```
-
-:o: OK例：新しくulのスタイルが書けるな
-```css
-.index-old ul { ... }
-.index-add ul { ... }
-```
-
----
-## 4.拡張できる
-
-- 携わる人が複数人になっても、問題なく管理できる状態
-- CSS設計の規則はわかりやすく、学習コストが極端に高くないものがよい
-
----
-## で？具体的にどうすればいいの！？
+- **分けること**
+  - ファイルを分ける
+  - パーツの大きさで分ける
+  - 役割に応じて名前を分ける
 <!--
-_class: lead
+header: "CSS設計について/3.CSS設計について"
 -->
+
+---
+## そもそも、よいCSSとは？
+### よいCSS設計が目指す4つのゴール
+GoogleのエンジニアPhilip Walton氏のブログ
+「[CSS Architecture](https://philipwalton.com/articles/css-architecture/)」で提唱されている考え方。
+- **予測できる**
+- **再利用できる**
+- **拡張できる**
+- **保守できる**
+
+---
+
+- **予測できる**
+  スタイリングが期待通りに動くか、
+  その影響範囲が予測できる状態。
+
+- **再利用できる**
+  パーツを別の箇所で利用したとき、
+  コードを修正する手間がない状態。
+
+- **拡張できる**
+  追加・更新・配置換えをしたとき、
+  既存のCSSをリファクタリングする必要がない状態。
+
+- **保守できる**
+  CSSに携わる人が複数人であっても、問題なく管理できる状態。
 
 ---
 ## ↓↓↓
-## 既存の設計手法を活用しよう！
+## どうやって実現させればいいの？？
 <!--
-_class: lead
+_class: lead sub
+-->
+<!-- //speaker note
+なんの指標もなしに工夫するのは大変！
+上記の4つのゴールを実現するために本書では8つのルールがあげられています。
 -->
 
 ---
-# :three: 設計手法の紹介（3選）
+## CSS設計に共通する8つのポイント
+
+1. 特性に応じてCSSを分類する
+2. コンテンツとスタイリングが疎結合である
+3. 影響範囲がみだりに広すぎない
+4. 特定のコンテキストにみだりに依存していない
+5. 詳細度がみだりに高くない
+6. クラス名から影響範囲が想像できる
+7. クラス名から見た目・機能・役割が想像できる
+8. 拡張しやすい
+<!-- //speaker note
+設計手法の紹介とともに、どのルールに該当するのかが提示されていてわかりやすいです。
+-->
+
+---
+# :four: 設計手法の紹介（3選）
 <!--
 _class: lead
 _header: ""
@@ -173,60 +200,98 @@ _header: ""
 
 ---
 ## 有名な3つの設計手法
-- BEM（MindBEMding）
-  - [Get BEM](http://getbem.com/)
-  - [BEM公式ページ_日本語訳](https://qiita.com/yuta_web/items/6f2aa6b69e70b0b9f86c)
-  - [BEM(MindBEMding)によるCSS設計](https://github.com/manabuyasuda/styleguide/blob/master/how-to-bem.md)
 - OOCSS
-  - [Object-Oriented CSS](http://oocss.org/)
+  - [http://oocss.org/](http://oocss.org/)
+
 - SMACSS
-  - [Scalable and Modular Architecture for CSS](http://smacss.com/ja)
+  - [http://smacss.com/ja](http://smacss.com/ja)
+
+- BEM
+  - [https://en.bem.info/](https://en.bem.info/)
 <!--
-header: "CSS設計について/3.設計手法の紹介（3選）"
+header: "CSS設計について/4.設計手法の紹介（3選）"
+-->
+<!-- //speaker note
+紹介する設計手法と、その公式ドキュメント一覧。
 -->
 
 ---
-## BEM（MindBEMding）とは
-- Block/Element/Modifier で構成
-  - Block … 構成のルートとなる要素
-  - Element … Blockの子要素
-  - Modifier … BlockやElementの装飾や動作のパターン
-- MindBEMding … BEMをCSSのクラス名に適用するために作られた規則のこと
+## OOCSS（Object-Oriented CSS）
+- **提唱された発想**
+  - レゴのように組み合わせ自由なモジュールの集まりを作ろう
+  - そのモジュールの組み合わせでページを作成しよう
+  - 新規ページを作るときも、基本的に追加のCSSは必要ない
+
+- **原則**
+  - ストラクチャーとスキンの分離
+  - コンテナとコンテンツの分離
+<!-- //speaker note
+日本語訳：オブジェクト指向CSS
+解説はかなり簡素で、明確に規則と呼べるものも多くない。
+他の設計手法も、基本的にOOCSSを参考にしつつ改良が加えられたもの。CSS設計の基礎中の基礎であると本書では言っている。
+-->
 
 ---
-## BEMで書いた例
-- 
+### ストラクチャー（構造）とスキン（見た目）の分離
+- ストラクチャー： `width`/`height`/`padding`/`margin` など
+- スキン： `color`/`font`/`background`/`box-shadow` など
+### コンテナとコンテンツの分離
+- コンテナ： ヘッダー・セクションなど（エリア）
+- コンテンツ： カードやボタンモジュールなど
+<!-- //speaker note
+モジュールをなるべく特定のエリアに依存させない！
+-->
 
 ---
-## OOCSSとは
-- Object-Oriented CSS … オブジェクト指向CSS
-- 構造と見た目を分離する
-- コンテナとコンテンツを分離する
+## SMACSS（Scalable and Modular Architecture for CSS）
 
----
-## OOCSSで書いた例
-
----
-## SMACSSとは
-- Scalable and Modular Architecture for CSS
-  （日本語訳：拡張可能かつモジュール的なCSS設計）
 - CSSを5つのカテゴリに分類して管理
   - Base … 要素そのもののデフォルトスタイル
   - Layout … ページをエリアごとに分割
   - Module … 再利用可能なパーツ
   - State … レイアウトやモジュールの特定の状態を示す
   - Theme … サイトのルック＆フィールを定義
+<!-- //speaker note
+日本語訳：拡張可能かつモジュール的なCSS設計。
+OOCSSがほぼモジュールのみにしか言及していないのに対し、SMACSSはベースやレイアウトの扱い方にまで言及している。
+-->
+
 ---
-## SMACSSで書いた例
+## BEM
+- **Block** … 論理的かつ機能的に独立したモジュール
+  ※レイアウトに関するスタイリング
+  （position/float/marginなど）をしてはいけない。
+
+- **Element** … Blockの子要素
+  ※Blockの外では独立して使用できない
+
+- **Modifier** … BlockやElementの装飾や動作のパターン
+
+- 詳細度を均一に保つため、要素・IDセレクタは推奨されない
+<!-- //speaker note
+OOCSSのようにモジュールをベースにした方法論であるものの、他の設計手法に比べて厳格・強力。
+Blockは特定のコンテキストに依存していない、どこでも使い回せるパーツ。基本的に、レイアウトに関するスタイリング（position/float/marginなど）をしてはいけない。
+-->
 
 ---
 ## 他にも…
 - PRECSS
 - MCSS
-- FLOCSS 　などがあるよ
+- FLOCSS 　など
 
 ---
-# :four: まとめ
+## 各設計手法で書いてみた
+- OOCSS
+  http://sample.com/OOCSS/
+
+- SMACSS
+  http://sample.com/SMACSS/
+
+- BEM
+  http://sample.com/BEM/
+
+---
+# :five: まとめ
 <!--
 _class: lead
 _header: ""
@@ -235,7 +300,7 @@ _header: ""
 ---
 ## 書き比べてみた感想
 <!--
-header: "CSS設計について/4.まとめ"
+header: "CSS設計について/5.まとめ"
 -->
 
 ---
@@ -245,42 +310,30 @@ header: "CSS設計について/4.まとめ"
 - UIの部品化などのコンポーネント思考は、CSS以外でも有用な考え方
 
 ---
-# :five: おまけ
+# :six: おまけ
 <!--
 _class: lead
 _header: ""
 -->
 
 ---
-## 参考文献
-- [CSS設計完全ガイド　～詳細解説＋実践的モジュール集](https://www.amazon.co.jp/dp/429711173X/ref=cm_sw_em_r_mt_dp_Z35SG2QWFQG0S0W1WRK2)
-![bg fit right:38%](./img/2022-01-13-18-21-40.png)
-<!--
-header: "CSS設計について/5.おまけ"
--->
-
----
-## その他、参考にした記事のリンク集
-- [脱CSS無法地帯！！CSS設計を取り入れてWebサイトのメンテナンス性を向上！](https://www.gpol.co.jp/blog/101)
-- [CSS設計って勉強しなきゃいけないの？~CSS設計完全ガイドを読んで~](https://fixel.co.jp/blog/css-design-1/)
-- [【CSS設計手法】BEM、OOCSS、SMACSSの違いと特徴のまとめ](https://webdesign-trends.net/entry/9214)
-- [CSS設計とは？設計手法はどれがいいのかまとめてみた](https://depart-inc.com/blog/css-design/)
-- [CSS設計の基本](https://qiita.com/tera_shin/items/af90aeba49f93c76bd9e)
-
----
 ## 今回のスライドについて
 
-VSCodeの拡張機能+Markdownで書きました！
+VSCodeの拡張機能[Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)を使って、
+Markdownで書きました！
 マウス操作なしでサクサク便利:smile::pray::sparkles:
-- 拡張機能
-  - [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
 - 参考記事
   - [【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る](https://qiita.com/tomo_makes/items/aafae4021986553ae1d8)
+  - [【Marp】スライドをさっと作成して、CSSで自由にスタイルをあてたい](https://techblog.istyle.co.jp/archives/6356)
+- お借りした背景素材：[Floral Drawings Slides](https://www.slidescarnival.com/ceres-free-presentation-template/1766)
+<!--
+header: "CSS設計について/6.おまけ"
+-->
 
 ---
 # ご清聴ありがとうございました:bow:
 よいコーディングライフを！
 <!--
-_class: lead
+_class: lead top
 _header: ""
 -->
