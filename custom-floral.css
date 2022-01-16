@@ -1,0 +1,34 @@
+/* @theme custom-floral */
+/* marp --theme-set custom-floral.css -- slide.md */
+@import 'gaia';
+
+header {
+  text-align: center;
+}
+section {
+  background: url(img/slide_bg3.png) center no-repeat;
+  background-size: cover;
+  color: #2e2e2e;
+}
+section.lead {
+  background-image: url(img/slide_bg2.png);
+}
+section.lead.top {
+  background-image: url(img/slide_bg1.png);
+  color: #f6f6e9;
+}
+section.lead.sub {
+  background-image: url(img/slide_bg3.png);
+}
+section h3 {
+  font-size: 1.2em;
+}
+footer {
+  text-align: center;
+  color: #f6f6e9;
+}
+img[alt="book"]{
+  float: left;
+  width: 30%;
+  margin-right: 60px;
+}

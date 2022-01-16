@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: gaia
+theme: custom-floral
 size: 16:9
 paginate: true
 ---
